@@ -604,6 +604,419 @@
           </tr>
         </table>
       </section>
+
+             <!-- RSVP Start-->
+
+<!-- RSVP (KG) -->
+<section id="rsvp-kg" style="background-color: inherit;">
+	<style>
+	  /* ============ RSVP KG: universal, responsive ============ */
+	  #rsvp-kg {
+		width: 90%;
+		padding: 60px 12px;
+		font-family: Arial, sans-serif;
+	  }
+  
+	  #rsvp-kg .wrap {
+		max-width: 560px;
+		margin: 0 auto;
+	  }
+  
+	  #rsvp-kg .title {
+		text-align: center;
+		font-size: 26px;
+		font-weight: 700;
+		margin: 0 0 10px;
+		letter-spacing: -0.02em;
+	  }
+  
+	  #rsvp-kg .subtitle {
+		text-align: center;
+		margin: 0 0 26px;
+		opacity: 0.78;
+		line-height: 1.45;
+	  }
+  
+	  #rsvp-kg .card {
+		background: #fff;
+		border-radius: 20px;
+		padding: 22px;
+		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+		border: 1px solid rgba(0, 0, 0, 0.06);
+	  }
+  
+	  #rsvp-kg .field {
+		margin-bottom: 16px;
+	  }
+  
+	  #rsvp-kg .label {
+		display: block;
+		font-size: 14px;
+		margin-bottom: 8px;
+		color: #111;
+		opacity: 0.9;
+	  }
+  
+	  #rsvp-kg .input {
+		width: 100%;
+		border: 1px solid rgba(0, 0, 0, 0.16);
+		background: #fff;
+		border-radius: 14px;
+		padding: 12px 12px;
+		font-size: 16px;
+		outline: none;
+		transition: 0.15s ease;
+	  }
+  
+	  #rsvp-kg .input:focus {
+		border-color: #111;
+		box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.06);
+	  }
+  
+	  /* Toggle (Ооба/Жок) */
+	  #rsvp-kg .toggle {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
+		margin-top: 10px;
+	  }
+  
+	  #rsvp-kg .toggle input {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+	  }
+  
+	  #rsvp-kg .tbtn {
+		border: 1px solid rgba(0, 0, 0, 0.16);
+		border-radius: 16px;
+		padding: 12px 14px;
+		cursor: pointer;
+		user-select: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		font-size: 15px;
+		background: #fff;
+		transition: 0.15s ease;
+		min-height: 44px;
+	  }
+  
+	  #rsvp-kg .tbtn:hover {
+		border-color: #111;
+		transform: translateY(-1px);
+	  }
+  
+	  #rsvp-kg .toggle input:checked + label.tbtn {
+		border-color: #111;
+		background: rgba(0, 0, 0, 0.06);
+		font-weight: 700;
+		box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+	  }
+  
+	  /* Guests stepper (input жок) */
+	  #rsvp-kg .guestsRow {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 10px;
+		align-items: center;
+	  }
+  
+	  #rsvp-kg .stepper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+		border: 1px solid rgba(0, 0, 0, 0.16);
+		border-radius: 16px;
+		padding: 10px;
+		background: #fff;
+		min-height: 54px;
+	  }
+  
+	  #rsvp-kg .stepBtn {
+		width: 46px;
+		height: 46px;
+		border-radius: 14px;
+		border: 1px solid rgba(0, 0, 0, 0.14);
+		background: #fff;
+		cursor: pointer;
+		font-size: 20px;
+		line-height: 1;
+		transition: 0.15s ease;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	  }
+  
+	  #rsvp-kg .stepBtn:hover {
+		border-color: #111;
+		transform: translateY(-1px);
+	  }
+  
+	  #rsvp-kg .stepBtn:disabled {
+		opacity: 0.45;
+		cursor: not-allowed;
+		transform: none;
+	  }
+  
+	  #rsvp-kg .countText {
+		font-size: 18px;
+		font-weight: 700;
+		color: #111;
+		padding: 0 8px;
+		white-space: nowrap;
+	  }
+  
+	  #rsvp-kg .countSub {
+		font-size: 12px;
+		opacity: 0.65;
+		margin-top: 6px;
+		line-height: 1.35;
+	  }
+  
+	  /* Button */
+	  #rsvp-kg .btn {
+		width: 100%;
+		padding: 14px 16px;
+		border-radius: 999px;
+		border: 1px solid #111;
+		background: #111;
+		color: #fff;
+		cursor: pointer;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		transition: 0.15s ease;
+		margin-top: 6px;
+		min-height: 48px;
+	  }
+  
+	  #rsvp-kg .btn:hover { opacity: 0.92; }
+  
+	  #rsvp-kg .btn:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	  }
+  
+	  /* Status */
+	  #rsvp-kg .status {
+		text-align: center;
+		margin: 14px 0 0;
+		font-size: 14px;
+		padding: 10px 12px;
+		border-radius: 12px;
+		display: none;
+		border: 1px solid transparent;
+	  }
+  
+	  #rsvp-kg .status.show { display: block; }
+  
+	  #rsvp-kg .status.ok {
+		background: rgba(34, 197, 94, 0.12);
+		color: #166534;
+		border-color: rgba(34, 197, 94, 0.25);
+	  }
+  
+	  #rsvp-kg .status.err {
+		background: rgba(239, 68, 68, 0.12);
+		color: #7f1d1d;
+		border-color: rgba(239, 68, 68, 0.25);
+	  }
+  
+	  /* Responsive */
+	  @media (max-width: 520px) {
+		#rsvp-kg { padding: 46px 12px; }
+		#rsvp-kg .title { font-size: 22px; }
+		#rsvp-kg .card { padding: 18px; border-radius: 18px; }
+		#rsvp-kg .toggle { grid-template-columns: 1fr; }
+		#rsvp-kg .stepper { padding: 10px; }
+		#rsvp-kg .countText { font-size: 17px; }
+	  }
+	</style>
+  
+	<div class="wrap">
+	  <h2 class="title" style="color: inherit;">Келериңизди тастыктап коюңуз</h2>
+	  <p class="subtitle">Сураныч, <b>12-декабрь 2026</b> чейин жооп бериңиз</p>
+  
+	  <form id="rsvpFormKg" class="card" >
+		<!-- Аты-жөнү -->
+		<div class="field" >
+		  <label class="label" >Аты-жөнүңүз</label>
+		  <input
+			class="input"
+			name="fullName"
+			type="text"
+			placeholder="Мисалы: Айбек Турсунов"
+			required
+			autocomplete="name"
+      style="width: 96%;"
+		  />
+		</div>
+  
+		<!-- Катышуу -->
+		<div class="field">
+		  <div class="label" style="margin-bottom:6px;">Катыша аласызбы?</div>
+  
+		  <div class="toggle">
+			<div style="position:relative;">
+			  <input id="attendYesKg" type="radio" name="attend" value="Ооба" required />
+			  <label class="tbtn" for="attendYesKg">✅ Ооба, келем</label>
+			</div>
+  
+			<div style="position:relative;">
+			  <input id="attendNoKg" type="radio" name="attend" value="Жок" required />
+			  <label class="tbtn" for="attendNoKg">❌ Жок</label>
+			</div>
+		  </div>
+		</div>
+  
+		<!-- Канча адам (input жок, + / - менен) -->
+		<div id="guestsWrapperKg" class="field" style="display:none;">
+		  <label class="label">Сиз менен канча адам болот?</label>
+  
+		  <div class="guestsRow">
+			<div class="stepper" aria-label="Кошо келгендердин саны">
+			  <button id="minusBtnKg" class="stepBtn" type="button" aria-label="Азайтуу">−</button>
+  
+			  <div style="text-align:center;">
+				<div class="countText">
+				  <span id="guestsCountTextKg">1</span>
+				</div>
+				<div style="font-size:12px; opacity:.65;">адам</div>
+			  </div>
+  
+			  <button id="plusBtnKg" class="stepBtn" type="button" aria-label="Көбөйтүү">+</button>
+			</div>
+  
+			<div class="countSub">
+			  Эгер өзүңүз жалгыз келсеңиз — <b>1</b> калтырыңыз.
+			</div>
+		  </div>
+  
+		  <!-- жашыруун field (таблицага жөнөтүү үчүн) -->
+		  <input type="hidden" id="guestsCountKg" name="guestsCount" value="1" />
+		</div>
+  
+		<button id="rsvpSubmitKg" class="btn" type="submit">Жөнөтүү</button>
+		<p id="rsvpStatusKg" class="status"></p>
+	  </form>
+	</div>
+</section>
+<!-- END RSVP (KG) -->
+  
+<!-- RSVP SCRIPT (KG) -->
+<script>
+	const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwxWUc-XUTHiSmgFCQGO2DQ2gXQyWD1QvWnAXNDcDjSUCoRhQvYr3lVgL_SJizqx9O7/exec";
+  
+	const form = document.getElementById("rsvpFormKg");
+	const statusEl = document.getElementById("rsvpStatusKg");
+	const submitBtn = document.getElementById("rsvpSubmitKg");
+  
+	const yes = document.getElementById("attendYesKg");
+	const no = document.getElementById("attendNoKg");
+  
+	const guestsWrapper = document.getElementById("guestsWrapperKg");
+	const minusBtn = document.getElementById("minusBtnKg");
+	const plusBtn = document.getElementById("plusBtnKg");
+  
+	const guestsText = document.getElementById("guestsCountTextKg");
+	const guestsHidden = document.getElementById("guestsCountKg");
+  
+	let guests = 1; // “Ооба” болсо минимум 1
+  
+	function setStatus(type, text) {
+	  statusEl.className = "status show " + (type === "ok" ? "ok" : "err");
+	  statusEl.textContent = text;
+	}
+	function clearStatus() {
+	  statusEl.className = "status";
+	  statusEl.textContent = "";
+	}
+  
+	function syncGuestsUI() {
+	  guestsText.textContent = String(guests);
+	  guestsHidden.value = String(guests);
+	  minusBtn.disabled = guests <= 1;
+	  plusBtn.disabled = guests >= 20;
+	}
+  
+	function syncVisibility() {
+	  if (yes.checked) {
+		guestsWrapper.style.display = "block";
+		if (!guests || guests < 1) guests = 1;
+		syncGuestsUI();
+	  } else {
+		guestsWrapper.style.display = "none";
+		// “Жок” болсо автомат 0 болуп жөнөтөбүз (submit ичинде)
+		guestsHidden.value = "";
+	  }
+	}
+  
+	yes.addEventListener("change", () => { clearStatus(); syncVisibility(); });
+	no.addEventListener("change", () => { clearStatus(); syncVisibility(); });
+  
+	minusBtn.addEventListener("click", () => {
+	  guests = Math.max(1, guests - 1);
+	  clearStatus();
+	  syncGuestsUI();
+	});
+  
+	plusBtn.addEventListener("click", () => {
+	  guests = Math.min(20, guests + 1);
+	  clearStatus();
+	  syncGuestsUI();
+	});
+  
+	form.addEventListener("input", clearStatus);
+  
+	form.addEventListener("submit", (e) => {
+	  e.preventDefault();
+	  clearStatus();
+  
+	  const fullName = (form.fullName.value || "").trim();
+	  if (fullName.length < 2) {
+		setStatus("err", "Аты-жөнүңүздү туура жазыңыз 🙏");
+		form.fullName.focus();
+		return;
+	  }
+  
+	  // “Жок” болсо guestsCount = 0 автомат
+	  if (no.checked) {
+		// hidden input түз эле 0 кылып коёбуз, таблицага так түшөт
+		guestsHidden.value = "0";
+	  } else {
+		guestsHidden.value = String(guests);
+	  }
+  
+	  submitBtn.disabled = true;
+	  submitBtn.textContent = "Жөнөтүлүүдө...";
+  
+	  const params = new URLSearchParams(new FormData(form)).toString();
+	  const url = `${SCRIPT_URL}?${params}`;
+  
+	  fetch(url, { method: "GET", mode: "no-cors" })
+		.then(() => {
+		  setStatus("ok", "Рахмат! Жооп кабыл алынды ✅");
+		  form.reset();
+		  guests = 1;
+		  syncVisibility();
+		})
+		.catch(() => {
+		  setStatus("err", "Жөнөтүү болбой калды. Кайра аракет кылыңыз.");
+		})
+		.finally(() => {
+		  submitBtn.disabled = false;
+		  submitBtn.textContent = "Жөнөтүү";
+		});
+	});
+  
+	// init
+	syncVisibility();
+</script>
+<!-- END RSVP SCRIPT (KG) -->
+
+	        <!-- RSVP End-->
       
 
       <section id="thanks-to">
